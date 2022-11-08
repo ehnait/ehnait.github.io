@@ -22,3 +22,7 @@ excerpt : ""
 ### [Fresco](https://frescolib.org/)
 
 > Fresco is a powerful system for displaying images in Android applications. It takes care of image loading and display so you don’t have to. Fresco supports Android 2.3 (Gingerbread) and later.
+
+### [Redis 入门](https://redis.io/docs/getting-started/)
+
+> This is a guide to getting started with Redis. You'll learn how to install, run, and experiment with the Redis server process.
