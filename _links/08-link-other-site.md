@@ -25,4 +25,4 @@ excerpt : ""
 
 ### [ProjectMars](https://www.projectmars.finance/)
 
-> The first token utilizing Black Hole Algorithm on Fantom network
+——The first token utilizing Black Hole Algorithm on Fantom network
