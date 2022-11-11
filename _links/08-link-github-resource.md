@@ -39,6 +39,9 @@ excerpt : ""
 
 > Longan 是一个简化 Android 开发的 Kotlin 工具库，可以使代码更加简洁易读。目前有超过 500 个常用方法或属性，能有效提高开发效率。
 
+### [leakcanary](https://github.com/square/leakcanary)
+
+> A memory leak detection library for Android.
 ### [walle](https://github.com/Meituan-Dianping/walle)
 
 > Android Signature V2 Scheme签名下的新一代渠道包打包神器
