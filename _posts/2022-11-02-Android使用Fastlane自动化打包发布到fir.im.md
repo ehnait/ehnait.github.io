@@ -133,17 +133,17 @@ default_platform(:android)
 
 platform :android do
 
-    lane :gofirs do
+    lane :gofir do
         flavors =[
                  "flavor1",
                  "flavor2"
                  ]
         flavors.each do |flavor|
-            gofir(param: flavor)
+            go(param: flavor)
         end
     end
 
-    lane :gofir do |option|
+    lane :go do |option|
             flavor = option[:param]
             gradle(
                   #https://docs.fastlane.tools/actions/gradle/
@@ -175,8 +175,6 @@ lane: xxx do 运行体 结束要跟随 end
 
 ```shell
 fastlane gofir
-或者
-fastlane gofirs
 ```
 
 如果提示gradlew 权限被拒绝 ，可以尝试在终端输入 **chmod +x gradlew**
