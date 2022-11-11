@@ -1,7 +1,7 @@
 ﻿---
 title: 'Android使用Fastlane自动化打包发布到fir.im'
 excerpt : "Android/IOS开发人员可以通过Fastlane结合Fir.im(或者蒲公英)等托管平台快速完成应用的分发，还能结合fir_cli等插件一键配置钉钉、飞书的Webhook通知到群组里。"
-# classes: wide 
+classes: wide 
 toc: true
 categories: 
   - Android
@@ -86,7 +86,31 @@ Android/IOS开发人员可以通过Fastlane结合Fir.im(或者蒲公英)等托�
 需要在fir网站中进行登录拿到自己的APIToken
 ![20221102_3](/assets/images/20221102_3.png){: .align-center}
 
-### 在Fastfile文件中编写执行代码
+### 编写Fastfile文件
+
+#### 1单渠道配置
+
+```ruby
+default_platform(:android)
+platform :android do
+    lane :gofir do
+        # 单渠道配置
+        gradle(task: 'assemble', build_type: 'Release')
+        changelog_from_git_commits(commits_count: 1, merge_commit_filtering: "exclude_merges")
+        fir_cli(
+            api_token: "xxx", # fir.im种的api token
+            specify_file_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH], # gradle apk 系统默认配置的的输出路径
+            changelog: lane_context[SharedValues::FL_CHANGELOG], # fir.im 的change log 系统默认配置的输出路径
+            dingtalk_access_token: "xxxx", # 钉钉机器人的webhook token
+            dingtalk_custom_message: lane_context[SharedValues::FL_CHANGELOG],  # 钉钉渠道的change log
+            dingtalk_at_all:true  # 钉钉是否@所有人
+          )
+    #     sh("ls") #fastlane支持shell
+    end
+end
+```
+
+#### 2多渠道配置
 
 ```ruby
 # This file contains the fastlane.tools configuration
@@ -104,31 +128,40 @@ Android/IOS开发人员可以通过Fastlane结合Fir.im(或者蒲公英)等托�
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+
 default_platform(:android)
 
-lane :gofir do
-#     puts "------gofir start ------"
-    # 多渠道配置
-    gradle(
-        #https://docs.fastlane.tools/actions/gradle/
-        task: "assemble",
-        flavor: "brazil",
-        build_type: "Release"
-    )
-    # 单渠道配置
-    # gradle(task: 'assemble', build_type: 'Release')
+platform :android do
 
-    # 是不是会犯愁发布应用时候版本更新说明要如何写 ，可以直接采用最新的git提交记录来充当版本说明  
-    changelog_from_git_commits(commits_count: 1, merge_commit_filtering: "exclude_merges")    # You can get a list of all available options by running fastlane action changelog_from_git_commits
-    fir_cli(
-        api_token: "8708606fa29fc8359737468f", # fir.im种的api token
-        specify_file_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH], # gradle apk 系统默认配置的的输出路径
-        changelog: lane_context[SharedValues::FL_CHANGELOG], # fir.im 的change log 系统默认配置的输出路径
-        dingtalk_access_token: "7745fcf81cdcf4cefdc7050613738d5b50b37bffc0201f1b5", # 钉钉机器人的webhook token
-        dingtalk_custom_message: lane_context[SharedValues::FL_CHANGELOG],  # 钉钉渠道的change log
-        dingtalk_at_all:true  # 钉钉是否@所有人
-      )
-#     sh("ls") #fastlane支持shell
+    lane :gofirs do
+        flavors =[
+                 "flavor1",
+                 "flavor2"
+                 ]
+        flavors.each do |flavor|
+            gofir(param: flavor)
+        end
+    end
+
+    lane :gofir do |option|
+            flavor = option[:param]
+            gradle(
+                  #https://docs.fastlane.tools/actions/gradle/
+                  task: "assemble",
+                  flavor: flavor,
+                  build_type: "Release"
+            )
+
+            changelog_from_git_commits(commits_count: 1, merge_commit_filtering: "exclude_merges")  # https://docs.fastlane.tools/actions/changelog_from_git_commits/
+            fir_cli(
+                api_token: "xxx",
+                specify_file_path: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
+                changelog: lane_context[SharedValues::FL_CHANGELOG],
+                dingtalk_access_token: "xxx",
+                dingtalk_custom_message: "当前flavor:[#{lane_context[SharedValues::GRADLE_FLAVOR]}] ,最近一次提交信息 [#{lane_context[SharedValues::FL_CHANGELOG]}]",
+                dingtalk_at_all:true
+            )
+    end
 end
 
 ```
@@ -142,6 +175,8 @@ lane: xxx do 运行体 结束要跟随 end
 
 ```shell
 fastlane gofir
+或者
+fastlane gofirs
 ```
 
 如果提示gradlew 权限被拒绝 ，可以尝试在终端输入 **chmod +x gradlew**
