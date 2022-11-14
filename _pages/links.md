@@ -1,10 +1,8 @@
 ---
-title: Links
+title: LINKS
 layout: collection
 permalink: /links/
 collection: links
 author_profile: true
-show_excerpts : false
+# show_excerpts : false
 ---
-
-Sample document listing for the collection `_links`.
