@@ -12,7 +12,7 @@ tags:
 
 ## 核心原理
 
-目前市面上大部分的Router框架([ARouter](https://github.com/alibaba/ARouter),[WMRouter](https://github.com/meituan/WMRouter))实现核心原理都差不多，在代码里加入的@Route注解，会在编译时期通过apt生成一些存储path和activityClass映射关系的类文件，然后app进程启动的时候会拿到这些类文件，把保存这些映射关系的数据读到内存里(保存在map里)，然后在进行路由跳转的时候，通过build()方法传入要到达页面的路由地址。本文介绍如何实现一个简易路由Router来加深理解。
+目前市面上大部分的Router框架([ARouter](https://github.com/alibaba/ARouter),[WMRouter](https://github.com/meituan/WMRouter))实现核心原理都差不多，在代码里加入的@Route注解，会在编译时期通过APT（Annotation Processing Tool）生成一些存储path和activityClass映射关系的类文件，然后app进程启动的时候会拿到这些类文件，把保存这些映射关系的数据读到内存里(保存在map里)，然后在进行路由跳转的时候，通过build()方法传入要到达页面的路由地址。本文介绍如何实现一个简易路由Router来加深理解。
 
 ## 包结构
 
