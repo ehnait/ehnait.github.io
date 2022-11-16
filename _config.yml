@@ -281,6 +281,9 @@ collections:
   links:
     output: true
     permalink: /:collection/:path/
+  sorting:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -307,3 +310,11 @@ defaults:
       author_profile: true
       toc: true
 
+  # _sorting
+  - scope:
+      path: ""
+      type: sorting
+    values:
+      layout: single
+      classes: wide 
+      author_profile: true
