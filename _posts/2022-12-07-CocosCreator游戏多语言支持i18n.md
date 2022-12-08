@@ -13,7 +13,9 @@ tags:
 目前暂时没有人力维护。
 
 通过查看插件源码并结合文档，修改并且实现了一个可用的国际化 Label 和 Sprite 组件。
-
+- [i18n 游戏多语言支持](https://docs.cocos.com/creator/2.4/manual/zh/advanced-topics/i18n.html?h=i18n)
+- [cocos creator 使用i18n多语言探索](https://www.jianshu.com/p/c73936c1e757)
+- 
 ## 支持
 
 - 国际化
