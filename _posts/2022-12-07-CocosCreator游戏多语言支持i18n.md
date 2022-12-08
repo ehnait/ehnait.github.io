@@ -52,6 +52,10 @@ LocalizedLabel.js和LocalizedSprite.js（**支持精灵图**）是继承cc.Label
 - currentLocale() 获取当前语言
 - updateSceneRenderers()  动态切换语言，这需要遍历Scene下的所有节点 不建议使用
 
+## 预览
+
+![20221207_4.gif](/assets/images/20221207_4.gif)
+
 ## demo示例
 
 *<https://github.com/ehnait/CocosCreatorProjects/tree/main/i18n>*
