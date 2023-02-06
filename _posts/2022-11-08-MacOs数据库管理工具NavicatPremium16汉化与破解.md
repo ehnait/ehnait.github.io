@@ -19,6 +19,6 @@ tags:
     /Applications/Navicat Premium.app/Contents/Resources
     ```
 
-## Navicat Premium 无限重置试用14天 ,支持Windows 和 MAC
+## Navicat Premium 无限重置试用14天 ,支持Windows 和 MAC (脚本运行需要Python3)
 
 [点我下载脚本](/assets/zips/navicat_test.zip){: .btn .btn--info}
