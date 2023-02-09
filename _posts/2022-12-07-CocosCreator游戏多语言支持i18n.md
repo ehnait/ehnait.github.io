@@ -1,10 +1,8 @@
 ﻿---
 title: 'Cocos Creator v2.4 的 i18n 游戏多语言支持'
 excerpt : " "
-categories:
-  - CocosCreator v2.4
-tags:
-  - i18n
+categories: CocosCreator v2.4
+tags: CocosCreator v2.4
 ---
 
 ## 前言
@@ -13,9 +11,11 @@ tags:
 目前暂时没有人力维护。
 
 通过查看插件源码并结合文档，修改并且实现了一个可用的国际化 Label 和 Sprite 组件。
+
 - [i18n 游戏多语言支持](https://docs.cocos.com/creator/2.4/manual/zh/advanced-topics/i18n.html?h=i18n)
 - [cocos creator 使用i18n多语言探索](https://www.jianshu.com/p/c73936c1e757)
-- 
+-
+
 ## 支持
 
 - 国际化
@@ -37,9 +37,8 @@ tags:
 
 ## How
 
-LocalizedLabel.js和LocalizedSprite.js（**支持精灵图**）是继承cc.Label和cc.Component的组件，所以需要在Cocos Creator中进行绑定，像这样：
-
-
+LocalizedLabel.js和LocalizedSprite.js（**支持精灵图**）是继承cc.Label和cc.Component的组件，所以需要在Cocos
+Creator中进行绑定，像这样：
 
 ![20221207_2.png](/assets/images/20221207_2.png)
 
