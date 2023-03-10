@@ -1,8 +1,8 @@
 ﻿---
 title: 'Cocos Creator v2.4 的 ClickUtils'
 excerpt : "点击事件的工具类"
-categories: CocosCreator v2.4
-tags: CocosCreator v2.4
+categories: CocosCreatorV2.4
+tags: CocosCreatorV2.4
 ---
 
 ## ClickUtils.js

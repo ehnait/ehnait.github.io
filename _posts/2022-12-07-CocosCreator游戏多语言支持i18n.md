@@ -1,8 +1,8 @@
 ﻿---
 title: 'Cocos Creator v2.4 的 i18n 游戏多语言支持'
 excerpt : " "
-categories: CocosCreator v2.4
-tags: CocosCreator v2.4
+categories: CocosCreatorV2.4
+tags: CocosCreatorV2.4
 ---
 
 ## 前言
