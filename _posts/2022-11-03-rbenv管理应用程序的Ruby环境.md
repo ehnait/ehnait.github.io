@@ -5,7 +5,6 @@ categories:
   - Ruby
 tags:
   - rbenv
-  - Ruby
 ---
 
 由于macOS本身的Ruby环境升级起来较为不方便，在搜寻解决方案之时发现rbenv

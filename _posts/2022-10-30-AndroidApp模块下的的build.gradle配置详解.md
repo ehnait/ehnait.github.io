@@ -6,7 +6,7 @@ toc: true
 categories: 
   - Gradle
 tags:
-  - Gradle
+  - build.gradle
 
 ---
 

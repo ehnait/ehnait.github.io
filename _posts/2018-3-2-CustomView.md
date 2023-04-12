@@ -5,7 +5,6 @@ classes: wide
 categories: 
   - Android
 tags:
-  - Android
   - Android View
   - Android Animation
 ---

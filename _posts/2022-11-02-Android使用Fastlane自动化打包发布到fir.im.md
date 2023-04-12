@@ -8,7 +8,6 @@ categories:
 tags:
   - fir.im
   - Fastlane
-  - Android
 ---
 
 ## 前言

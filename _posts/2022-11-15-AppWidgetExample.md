@@ -3,7 +3,6 @@ title: 'Android小组件示例'
 categories: 
   - Android
 tags:
-  - Android
   - Android 小组件
 ---
 

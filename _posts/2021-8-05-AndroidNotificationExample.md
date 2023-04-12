@@ -4,7 +4,6 @@ classes: wide
 categories: 
   - Android
 tags:
-  - Android 
   - Android Notification
 ---
 

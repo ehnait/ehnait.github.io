@@ -6,8 +6,7 @@ toc: true
 categories: 
   - Android
 tags:
-  - Android 
-  - Android Router
+  - Router
 ---
 
 ## 核心原理
