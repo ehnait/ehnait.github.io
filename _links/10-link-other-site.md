@@ -3,6 +3,10 @@ title: '杂七八杂的网址'
 excerpt : ""
 ---
 
+> AI工具导航 - AI人工智能导航
+
+### [AI工具导航](https://www.amz123.com/ai)
+
 ### [吾爱破解](https://www.52pojie.cn/)  
 
 > LCG - LSG|安卓破解|病毒分析
