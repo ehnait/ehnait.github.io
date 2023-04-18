@@ -1,6 +1,7 @@
 ﻿---
 title: 'Cocos Creator v2.4 的 ClickUtils'
 excerpt : "点击事件的工具类"
+classes: wide
 categories: CocosCreator
 tags: CocosCreatorV2.4
 ---

@@ -1,6 +1,7 @@
 ﻿---
 title: '和ChatGPT比肩,无需代理速度更快的Slack+Claude快速使用教程'
 excerpt: ""
+classes: wide
 categories: AI
 tags: ChatGPT
 ---

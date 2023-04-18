@@ -1,6 +1,7 @@
 ﻿---
 title: 'Cocos Creator v2.4 的 JS脚本模块化'
 excerpt : "点击事件的工具类"
+classes: wide
 categories: CocosCreatorV2.4
 tags: CocosCreatorV2.4
 ---

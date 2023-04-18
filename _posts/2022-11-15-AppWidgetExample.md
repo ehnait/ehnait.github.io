@@ -1,5 +1,6 @@
 ﻿---
 title: 'Android小组件示例'
+classes: wide
 categories: 
   - Android
 tags:
