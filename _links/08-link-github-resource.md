@@ -66,7 +66,7 @@ excerpt : ""
 ### [最完善的 iOS Shadowrocket规则](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
 
 > 这里是一系列好用的Shadowrocket规则，针对 Shadowrocket 开发，支持广告过滤。
-> 
+
 ### [Clash_Chinese_Patch](https://github.com/BoyceLig/Clash_Chinese_Patch)
 
 > 此版本为Clash for Windows原版汉化页面。
