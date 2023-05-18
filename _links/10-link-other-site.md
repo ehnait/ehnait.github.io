@@ -1,21 +1,25 @@
 ---
 title: '杂七八杂的网址'
-excerpt : ""
+excerpt: ""
 ---
 
-> AI工具导航 - AI人工智能导航
+### [digit77.com](https://www.digit77.com/)
 
-### [AI工具导航](https://www.amz123.com/ai)
+> digit77.com
 
-### [吾爱破解](https://www.52pojie.cn/)  
-
-> LCG - LSG|安卓破解|病毒分析
-
-### [24k导航](https://www.24kdh.com/)
+### [吾爱破解](https://www.52pojie.cn/)
 
 > 专注全网优质网址、优质资源分享
 
 ### [iMyShare](https://imyshare.com/)
+
+> LCG - LSG|安卓破解|病毒分析
+
+### [AI工具导航](https://www.amz123.com/ai)
+
+> AI工具导航 - AI人工智能导航
+
+### [24k导航](https://www.24kdh.com/)
 
 > 精品实用网络资源导航，助你学习、工作和生活
 
@@ -29,4 +33,4 @@ excerpt : ""
 
 ### [ProjectMars](https://www.projectmars.finance/)
 
-——The first token utilizing Black Hole Algorithm on Fantom network
+> The first token utilizing Black Hole Algorithm on Fantom network
