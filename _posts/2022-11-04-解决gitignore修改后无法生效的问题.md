@@ -1,7 +1,7 @@
 ﻿---
 title: '解决.gitignore修改后无法生效的问题'
 categories: 
-  - Git
+  - 工具与平台
 tags:
   - Git
 ---

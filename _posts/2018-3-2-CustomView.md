@@ -1,12 +1,10 @@
 ---
 title: 'Android水位动画'
 excerpt: "Android自定义View实现水位波浪的动画效果"
-classes: wide 
 categories: 
-  - Android
+  - 移动端
 tags:
-  - Android View
-  - Android Animation
+  - Android
 ---
 
 ![gif](/assets/images/20180302_1.gif){: .align-center height="40%" width="40%"}

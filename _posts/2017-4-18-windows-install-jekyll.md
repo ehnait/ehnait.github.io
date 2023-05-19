@@ -1,11 +1,11 @@
 ﻿---
 title: 'windows环境下搭建Jekyll'
-excerpt : ""
-categories: 
-  - Jekyll
+excerpt: ""
+toc: true
+categories:
+  - 工具与平台
 tags:
   - Jekyll
-toc: true
 ---
 ## Jekyll 是什么？
 

@@ -2,8 +2,9 @@
 title: '使用rbenv无缝管理应用程序的Ruby环境'
 excerpt_separator: "<!--more-->"
 categories: 
-  - Ruby
+  - 工具与平台
 tags:
+  - Ruby
   - rbenv
 ---
 

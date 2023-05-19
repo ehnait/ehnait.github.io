@@ -1,13 +1,12 @@
 ﻿---
 title: 'Android App模块下的的build.gradle配置详解'
-excerpt : ""
-classes: wide 
+excerpt: ""
 toc: true
-categories: 
-  - Gradle
+categories:
+  - 移动端
 tags:
-  - build.gradle
-
+  - Android
+  - Gradle
 ---
 
 ## [官方文档 :Android Plugin DSL Reference](https://google.github.io/android-gradle-dsl/2.3/index.html){: .btn .btn--primary}
@@ -91,7 +90,8 @@ defaultConfig是Android对象中的一个配置块，负责定义所有的默认
 
 - minSdkVerion: 用于指写APP最低支持的Android 系统版本，其对应的值是Android SKD 的API Level。
 
-- targetSdkVersion: 是 Android 提供向前兼容的主要依据，表明是基于哪个Android 版本开发的。也就是说，只要targetSdkVersion 不变，即使APK 安装在新 Android 系统上，其行为还是保持老的系统上的行为，这样就保证了系统对老应用的前向兼容性。
+- targetSdkVersion: 是 Android 提供向前兼容的主要依据，表明是基于哪个Android 版本开发的。也就是说，只要targetSdkVersion
+  不变，即使APK 安装在新 Android 系统上，其行为还是保持老的系统上的行为，这样就保证了系统对老应用的前向兼容性。
 
 - versionCode: 表明APP应用内部版本号，它是一个整数，一般用于APP升级
 
@@ -111,14 +111,15 @@ defaultConfig是Android对象中的一个配置块，负责定义所有的默认
 
 buildTypes是一个域对象。它是对构建类型：release、debug等的配置。还可以在buildTypes{}里新增任意多个需要构建的类型。每一个BuildType还会生成一个SourceSet。上面示例中，release就是一个BuildType。一般地像defaultConfig{}中的配置如果需要区分不同的构建版本配置不同的参数的话，就得在这里进行配置。常用的配置如有:
 
-- minifyEnabled（使用混淆）: 用于配置是否启用Proguard混淆，接收一个boolean类型的值。代码混淆是一个非常有用的功能，它不仅能使APK包size变小，还可以让反编译的人不容易看明白我们的源代码逻辑从而增加分析难度。一般情况下，release模式编译的版本一般会启动混淆功能。因为混淆后无法断点调试，所以debug模式下一般是不启动的。
+- minifyEnabled（使用混淆）:
+  用于配置是否启用Proguard混淆，接收一个boolean类型的值。代码混淆是一个非常有用的功能，它不仅能使APK包size变小，还可以让反编译的人不容易看明白我们的源代码逻辑从而增加分析难度。一般情况下，release模式编译的版本一般会启动混淆功能。因为混淆后无法断点调试，所以debug模式下一般是不启动的。
 - proguardFiles/ proguardFile:
 
-    proguardFiles是当我们启用混淆时，ProGuard的配置文件，它可以同时接受多个配置文件，因为它的参数是一个可变类型的参数。
+  proguardFiles是当我们启用混淆时，ProGuard的配置文件，它可以同时接受多个配置文件，因为它的参数是一个可变类型的参数。
 
-    proguardFile也是用于配置App proGuard混淆所使用的ProGuard配置文件，它接收一个文件作为参数。
+  proguardFile也是用于配置App proGuard混淆所使用的ProGuard配置文件，它接收一个文件作为参数。
 
-    当我们将minifyEnabled设为true，启动混淆后，还要通过proguardFiles或proguardFile指写混淆的配置表:
+  当我们将minifyEnabled设为true，启动混淆后，还要通过proguardFiles或proguardFile指写混淆的配置表:
 
     ```gradle
     ...
@@ -127,9 +128,11 @@ buildTypes是一个域对象。它是对构建类型：release、debug等的配�
 
     ```
 
-- consumerProguardFiles: 跟proguardFiles的用法一样，在启动混淆时用于配置使用的ProGuard配置文件。只不过consumerProguardFiles是专门用于aar包使用，这样在应用引用aar包并启动混淆时，会自动使用这个属性配置对aar包里的代码进行混淆。
+- consumerProguardFiles:
+  跟proguardFiles的用法一样，在启动混淆时用于配置使用的ProGuard配置文件。只不过consumerProguardFiles是专门用于aar包使用，这样在应用引用aar包并启动混淆时，会自动使用这个属性配置对aar包里的代码进行混淆。
 
-- applicationldSuffix: 用于配置基于默认applicationId的后缀，比如默认defaultConfig中配置的applicationId为com.example.testapp，若在debug的BuildType中指写applicationIdSuffix为.debug，那么构建生成的debug.apk的包名就是com.example.testapp.debug。
+- applicationldSuffix:
+  用于配置基于默认applicationId的后缀，比如默认defaultConfig中配置的applicationId为com.example.testapp，若在debug的BuildType中指写applicationIdSuffix为.debug，那么构建生成的debug.apk的包名就是com.example.testapp.debug。
 
 - debuggable: 用于配置是否生成一个可供调试的apk。一般release中都是为false，而debug中都是为true。
 
@@ -137,10 +140,13 @@ buildTypes是一个域对象。它是对构建类型：release、debug等的配�
 
 - multiDexEnabled: 用于配置是否启用自动拆分多个Dex的功能。一般用程序中代码太多，超过了65535个方法的时候，拆分多个Dex，接收一个boolean类型的值
 
-- zipAlignEnabled: 用于配置是否启用Android 的 zipalign整理优化APK文件的工具。zipalign能提高系统和应用运行效率，更快地读写APK中的资源，降低内存的使用。一般情况下，release模式编译的版本下都会启动此优化。
+- zipAlignEnabled: 用于配置是否启用Android 的
+  zipalign整理优化APK文件的工具。zipalign能提高系统和应用运行效率，更快地读写APK中的资源，降低内存的使用。一般情况下，release模式编译的版本下都会启动此优化。
 
-- shrinkResources（自动清理资源）: 用于配置在构建时是否自动清理未使用的资源，默认为false。此配置要配合minifyEnable(混淆)一起使用，因为先清理掉无用的代码后，这样一些无用的代码引用的资源才能被清理掉。
-自动清理未使用的资源跟使用代码混淆都存在一个同样的问题，那就是当代中使用了反射去时，Android Gradle就区分不出来了，从而误清理了被引用的资源，针对这种情况，Android Gradle提供了keep方法来让我们配置哪些资源不被清理。操作如下：
+- shrinkResources（自动清理资源）: 用于配置在构建时是否自动清理未使用的资源，默认为false。此配置要配合minifyEnable(混淆)
+  一起使用，因为先清理掉无用的代码后，这样一些无用的代码引用的资源才能被清理掉。
+  自动清理未使用的资源跟使用代码混淆都存在一个同样的问题，那就是当代中使用了反射去时，Android
+  Gradle就区分不出来了，从而误清理了被引用的资源，针对这种情况，Android Gradle提供了keep方法来让我们配置哪些资源不被清理。操作如下：
 
     1. 新建一个xml文件:res/raw/keep.xml
     2. 通过tools:keep属性来配置，它接受一个以逗号分割的配置资源列表，并支持星号通配符
@@ -176,7 +182,8 @@ buildTypes是一个域对象。它是对构建类型：release、debug等的配�
 
 - resValue:是一个方法，它在defaultCofnig{}、buildTypes{}和ProductFlavor中都可以使用。可用于自定义资源的方式来区分渠道。
 
-- manifestPlaceholdes: 是一个Map类型，通过对它的配置就可以方便地动态来设置AndroidManifest中的预设的占位符变量。例如像友盟这类第三方分析统计，就会要求我们在AndroidManifest文件中指定渠道号名称。
+- manifestPlaceholdes:
+  是一个Map类型，通过对它的配置就可以方便地动态来设置AndroidManifest中的预设的占位符变量。例如像友盟这类第三方分析统计，就会要求我们在AndroidManifest文件中指定渠道号名称。
 
 - dimension: 是维度的意思，它就好像一个分组一样。用于多维度地对ProductFlavor{}配置，从而解决多渠道的脚本冗余和更好的维护。
 
@@ -190,8 +197,10 @@ buildTypes是一个域对象。它是对构建类型：release、debug等的配�
 
 ## 5.compileOptions（编译选项）
 
-我们有时候会对Java源文件的编码、源文件使用的JDK版本等进行调优修改。比如需要配置源文件的编码为UTF-8。还比如想配置编译Java源代码的级别为二级1.10，为此Android Gradle提供了compileOptions的配置入口让我们来做些配置，例如：
-我们有时候会对Java源文件的编码、源文件使用的JDK版本等进行调优修改。比如需要配置源文件的编码为UTF-8。还比如想配置编译Java8 ，为此Android Gradle提供了compileOptions的配置入口让我们来做些配置，例如：
+我们有时候会对Java源文件的编码、源文件使用的JDK版本等进行调优修改。比如需要配置源文件的编码为UTF-8。还比如想配置编译Java源代码的级别为二级1.10，为此Android
+Gradle提供了compileOptions的配置入口让我们来做些配置，例如：
+我们有时候会对Java源文件的编码、源文件使用的JDK版本等进行调优修改。比如需要配置源文件的编码为UTF-8。还比如想配置编译Java8
+，为此Android Gradle提供了compileOptions的配置入口让我们来做些配置，例如：
 
  ```gradle
 android {

@@ -1,10 +1,10 @@
 ---
 title: 'Android数据加密'
-excerpt : "android 数据加密思路"
-categories: 
-  - Android
+excerpt: "android 数据加密思路"
+categories:
+  - 移动端
 tags:
-  - 数据加密
+  - Android
 ---
 ### android 数据加密思路
 

@@ -1,10 +1,10 @@
 ﻿---
 title: 'Android小组件示例'
 classes: wide
-categories: 
-  - Android
+categories:
+  - 移动端
 tags:
-  - Android 小组件
+  - Android
 ---
 
 之前产品有一个需求要开发一个小组件，我是参考 <https://developer.android.com/guide/topics/appwidgets/overview> 官方文档去实现的，兼容起来很麻烦。

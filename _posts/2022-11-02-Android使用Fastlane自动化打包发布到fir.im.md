@@ -1,12 +1,11 @@
 ﻿---
 title: 'Android使用Fastlane自动化打包发布到fir.im'
-excerpt : "Android/IOS开发人员可以通过Fastlane结合Fir.im(或者蒲公英)等托管平台快速完成应用的分发，还能结合fir_cli等插件一键配置钉钉、飞书的Webhook通知到群组里。"
-classes: wide 
+excerpt: "Android/IOS开发人员可以通过Fastlane结合Fir.im(或者蒲公英)等托管平台快速完成应用的分发，还能结合fir_cli等插件一键配置钉钉、飞书的Webhook通知到群组里。"
 toc: true
-categories: 
-  - Android
+categories:
+  - 移动端
 tags:
-  - fir.im
+  - Android
   - Fastlane
 ---
 

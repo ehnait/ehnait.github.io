@@ -1,10 +1,9 @@
 ﻿---
 title: 'Android Notification Example (兼容8.0)'
-classes: wide 
 categories: 
-  - Android
+  - 移动端
 tags:
-  - Android Notification
+  - Android
 ---
 
 Demonstration of using channels to categorize notifications by topic. This feature was added in Android O, and allows users to have fine-grained control over their notificatin preferences.

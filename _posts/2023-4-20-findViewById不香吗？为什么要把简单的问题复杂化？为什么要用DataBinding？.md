@@ -2,8 +2,10 @@
 title: 'findViewById不香吗？为什么要把简单的问题复杂化？为什么要用DataBinding？'
 excerpt: ""
 classes: wide
-categories: Android
-tags: DataBinding
+categories:
+  - 移动端
+tags:
+  - Android
 ---
 
 ![findViewById不香吗？为什么要把简单的问题复杂化？为什么要用DataBinding？](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7670febd9d0941a8aa40d5d36bbe2239~tplv-k3u1fbpfcp-zoom-crop-mark:1512:1512:1512:851.awebp?)
@@ -14,9 +16,11 @@ tags: DataBinding
 
 说起 DataBinding/ViewBinding 的历史，可谓是一波三折，甚至是比 Dagger/Hilt 还要传奇。
 
-说起依赖注入框架 Dagger2/Hilt ，也是比较传奇，刚出来的时候火的一塌糊涂，各种攻略教程，随后发现坑多难以使用，随之逐渐预冷，近几年在 Hilt 发布之后越发的火爆了。
+说起依赖注入框架 Dagger2/Hilt ，也是比较传奇，刚出来的时候火的一塌糊涂，各种攻略教程，随后发现坑多难以使用，随之逐渐预冷，近几年在
+Hilt 发布之后越发的火爆了。
 
-而 DataBinding/ViewBinding 作为 Android 官方的亲儿子库，它的经历却更加的离奇，从发布的时候火爆，然后到坑太多直接遇冷，随之被其他框架替代，再到后面 Kotlin 出来之后是更加的冷门了，全网是一片吐槽，随着 Kotlin 插件废弃之后 ViewBinding 的推出而再度翻火...都够拍一部大片了。😅
+而 DataBinding/ViewBinding 作为 Android 官方的亲儿子库，它的经历却更加的离奇，从发布的时候火爆，然后到坑太多直接遇冷，随之被其他框架替代，再到后面
+Kotlin 出来之后是更加的冷门了，全网是一片吐槽，随着 Kotlin 插件废弃之后 ViewBinding 的推出而再度翻火...都够拍一部大片了。😅
 
 说到这里了，在Android开发者，特别是没用过 DataBinding 的开发者心中可能都有一个大致的印象，DataBinding太坑了，太老了，更新慢，都是缺点，跑都跑不起来，狗都不用...😅😅
 
@@ -26,11 +30,13 @@ tags: DataBinding
 
 那么作为官方主推的 MVVM 架构指定框架 DataBinding 真的有这么不堪吗?😂
 
-在目前看来 Android 客户端开发还没有进化到 Compose，我们目前的主流布局方案还是XML,而基于VMMV架构的 DataBinding 框架还是很有必要学习与使用的。💪
+在目前看来 Android 客户端开发还没有进化到 Compose，我们目前的主流布局方案还是XML,而基于VMMV架构的 DataBinding
+框架还是很有必要学习与使用的。💪
 
 老话这么说，我可以不用，但是我要会。就算自己不用，至少也要能看懂别人的代码吧。
 
-闲话不多说，下面就简单从几点分析一下，为什么Googel推荐使用 DataBinding/ViewBinding ，如何使用，以及基本的原理，最后推荐一些 DataBinding 的封装简化使用流程。
+闲话不多说，下面就简单从几点分析一下，为什么Googel推荐使用 DataBinding/ViewBinding ，如何使用，以及基本的原理，最后推荐一些
+DataBinding 的封装简化使用流程。
 
 ![0LfPrjVgtZ.GIF](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/575f5ac1420149c985d36361c89d1dd2~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
 
@@ -77,7 +83,8 @@ androidx.appcompat.app
 7. 当前Activity找到其他Activity的相同id，但真实不存在的问题。
 8. 由于重建、恢复导致的控件空指针问题。
 
-等等，当然了，其中很多问题是逻辑问题导致的空指针，锅不能都扣到 findViewById 头上。就算我们使用其他的包括 DataBinding 的方案时也并不能完全避免空指针的，只能说尽量避免空指针。
+等等，当然了，其中很多问题是逻辑问题导致的空指针，锅不能都扣到 findViewById 头上。就算我们使用其他的包括 DataBinding
+的方案时也并不能完全避免空指针的，只能说尽量避免空指针。
 
 这都不说了，关键是当布局中的 ID 很多的时候，需要写大量的 findViewById 模板代码。这简直是要命了，所以就引申出了很多框架或插件。
 
@@ -85,7 +92,8 @@ androidx.appcompat.app
 
 虽然 XUtils，ButterKnife 这类插件可以专门对 findviewbyid 方法进行简化，但是还是需要写注解让控件与资源绑定，当然后期还专门有针对绑定的插件。
 
-但是其本质还是 findViewById 那一套，再后来随着组件化与插件化的火热，类似 ButterKnife 在这样的架构中或多或少的有一些其他的问题 R R1 R2...总感觉乖乖的，有点鸡肋的意思，用的人也是越来越少了。
+但是其本质还是 findViewById 那一套，再后来随着组件化与插件化的火热，类似 ButterKnife 在这样的架构中或多或少的有一些其他的问题
+R R1 R2...总感觉乖乖的，有点鸡肋的意思，用的人也是越来越少了。
 
 而随着 Kotlin 的流行，和 `kotlin-android-extensions` 插件的诞生，一切又不一样了，开发者也有了新的选择。
 
@@ -120,24 +128,30 @@ public final class MainActivity extends AppCompatActivity {
 }
 ```
 
-`kotlin-android-extensions`插件会帮我们生成一个\_\$\_findCachedViewById()函数，优先从内存缓存 HashMap 中找控件，找不到就会调用原生的 findViewById 添加到内存缓存中，是的，就是我们常用的很简单的缓存逻辑。
+`kotlin-android-extensions`插件会帮我们生成一个\_\$\_findCachedViewById()函数，优先从内存缓存 HashMap 中找控件，找不到就会调用原生的
+findViewById 添加到内存缓存中，是的，就是我们常用的很简单的缓存逻辑。
 
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/959a327f9fc14216b8f69414379da0a2~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
 
 后期的发展大家也知道了，随着 `apply plugin: 'kotlin-android-extensions'` 插件被官方背弃了，至于为什么被废弃，我个人大致猜测可能是：
 
 1. 底层还是基于 findViewById，还是会有 findViewById 的弊端，只是多了缓存的处理。
-2. 就算是多了缓存看起来很美，但缓存并不好用，在部分需要回收再次使用的场景，例如 RV.Adapter.ViewHolder 中存在缓存失效每次都 findViewById 而导致的性能问题（还不如不要呢）。
+2. 就算是多了缓存看起来很美，但缓存并不好用，在部分需要回收再次使用的场景，例如 RV.Adapter.ViewHolder 中存在缓存失效每次都
+   findViewById 而导致的性能问题（还不如不要呢）。
 3. 每一个 Page/Item 都需要一个 HashMap 来保存 View 实例，占用内存过大。
 4. xml 中的 ID 没有跟页面绑定，一样有 findViewById 的那些问题，在当前 Activity 可以找到其他页面的 ID。
 
-再而后 2019 年 Google 推出了 ViewBinding 终结一切，如果布局中的某个 View 实例隐含 Null 安全隐患，则编译时 ViewBinding 中间代码为其生成 @Nullable 注解。从而最大限度避免控件的空指针异常。并且由于视图绑定会创建对视图的直接引用，因此不存在因视图的 ID 无效而引发空指针异常。并且每个绑定类中的字段均具有与它们在 xml 文件中引用的视图相匹配的类型。这意味着不存在发生类转换异常的风险。
+再而后 2019 年 Google 推出了 ViewBinding 终结一切，如果布局中的某个 View 实例隐含 Null 安全隐患，则编译时 ViewBinding
+中间代码为其生成 @Nullable 注解。从而最大限度避免控件的空指针异常。并且由于视图绑定会创建对视图的直接引用，因此不存在因视图的
+ID 无效而引发空指针异常。并且每个绑定类中的字段均具有与它们在 xml 文件中引用的视图相匹配的类型。这意味着不存在发生类转换异常的风险。
 
 而 DataBinding 作为 ViewBinding 的老大哥则又一次登上了舞台。
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/80c8ff2b59704503bf0190721318d838~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
 
-\*\*DataBinding VS ViewBinding ：\*\*两者都能做 binding UI layouts 的操作，但是 DataBinding 还支持一些额外的功能，如双向绑定，xml中使用变量等。ViewBinding不会添加编译时间，而 DataBinding 会添加编译时间，并且 DataBinding 会少量增加 apk 体积, ViewBinding 不会。总的来说ViewBinding更加的轻量。
+\*\*DataBinding VS ViewBinding ：\*\*两者都能做 binding UI layouts 的操作，但是 DataBinding
+还支持一些额外的功能，如双向绑定，xml中使用变量等。ViewBinding不会添加编译时间，而 DataBinding 会添加编译时间，并且
+DataBinding 会少量增加 apk 体积, ViewBinding 不会。总的来说ViewBinding更加的轻量。
 
 题外话：ButterKnife 的作者已经宣布不维护 ButterKnife，作者推荐使用 ViewBinding 了。
 
@@ -178,26 +192,26 @@ android {
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:binding="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="RtlHardcoded">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:binding="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="RtlHardcoded">
 
     <data>
 
     </data>
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:viewBindingIgnore="true">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:viewBindingIgnore="true">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/splash_center_blue_logo" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/splash_center_blue_logo"/>
 
     </FrameLayout>
 
@@ -208,17 +222,18 @@ android {
 可以看到多了一个data的标签，我们就可以在data中定义变量与变量的类型。
 
 ```xml
-    <data>
-        <import type="android.util.SparseArray"/>
-        <import type="java.util.Map"/>
-        <import type="java.util.List"/>
-        <import type="android.text.TextUtils"/>
-        <variable name="list" type="List<String>"/>
-        <variable name="sparse" type="SparseArray<String>"/>
-        <variable name="map" type="Map<String, String>"/>
-        <variable name="index" type="int"/>
-        <variable name="key" type="String"/>
-    </data>
+
+<data>
+    <import type="android.util.SparseArray"/>
+    <import type="java.util.Map"/>
+    <import type="java.util.List"/>
+    <import type="android.text.TextUtils"/>
+    <variable name="list" type="List<String>"/>
+    <variable name="sparse" type="SparseArray<String>"/>
+    <variable name="map" type="Map<String, String>"/>
+    <variable name="index" type="int"/>
+    <variable name="key" type="String"/>
+</data>
 ```
 
 import 是定义导入需要的类，variable是定义需要的变量是由外部传入，我们可以使用多种方式传入定义的variable对象。
@@ -226,25 +241,27 @@ import 是定义导入需要的类，variable是定义需要的变量是由外�
 例如：
 
 ```xml
-    <data>
 
-        <variable
+<data>
+
+    <variable
             name="viewModel"
-            type="com.hongyegroup.cpt_auth.mvvm.vm.UserLoginViewModel" />
+            type="com.hongyegroup.cpt_auth.mvvm.vm.UserLoginViewModel"/>
 
-        <variable
+    <variable
             name="click"
-            type="com.hongyegroup.cpt_auth.ui.UserLoginActivity.ClickProxy" />
+            type="com.hongyegroup.cpt_auth.ui.UserLoginActivity.ClickProxy"/>
 
-        <import type="com.guadou.lib_baselib.utils.NumberUtils" />
+    <import type="com.guadou.lib_baselib.utils.NumberUtils"/>
 
-    </data>
+</data>
 ```
 
 使用起来如下：
 
 ```xml
-    <TextView
+
+<TextView
         android:id="@+id/tv_get_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -261,7 +278,7 @@ import 是定义导入需要的类，variable是定义需要的变量是由外�
         binding:clicks="@{click.getVerifyCode}"
         tools:background="@drawable/shape_white_round7"
         tools:text="Get Code"
-        tools:textColor="@color/light_blue_text" />
+        tools:textColor="@color/light_blue_text"/>
 ```
 
 页面的数据都保存在ViewModel中，页面的事件都封装在Click对象中，还能通过NumberUtils直接使用内部的方法了。
@@ -288,7 +305,8 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-其中 ActivityMainBinding 这个类就是系统生成的，生成规则是布局文件名称转化为驼峰大小写形式，然后在末尾添加 Binding 后缀。如 activity\_main 编译为 ActivityMainBinding 。
+其中 ActivityMainBinding 这个类就是系统生成的，生成规则是布局文件名称转化为驼峰大小写形式，然后在末尾添加 Binding 后缀。如
+activity\_main 编译为 ActivityMainBinding 。
 
 现在的绑定比刚开始的 DataBinding 真的已经方便很多了。而 Fragment 的绑定有些许不同。
 
@@ -325,9 +343,9 @@ class MainFragment : Fragment() {
 
 android:text="@{list[index]}"
 
-android:text="@{sparse[index]}"
+        android:text="@{sparse[index]}"
 
-android:text="@{map[key]}"
+        android:text="@{map[key]}"
 
 ```
 
@@ -336,12 +354,12 @@ android:text="@{map[key]}"
 ```xml
 android:text="@{user.firstName, default=PLACEHOLDER}"
 
-//常用的三元与判空
-android:text="@{user.name != null ? user.name : user.nickName}"
+        //常用的三元与判空
+        android:text="@{user.name != null ? user.name : user.nickName}"
 
-android:text="@{user.name ?? user.nickName}"
+        android:text="@{user.name ?? user.nickName}"
 
-android:visibility="@{user.active ? View.VISIBLE : View.GONE}"
+        android:visibility="@{user.active ? View.VISIBLE : View.GONE}"
 ```
 
 事件的简单处理：
@@ -349,28 +367,29 @@ android:visibility="@{user.active ? View.VISIBLE : View.GONE}"
 ```xml
 android:onClick="@{click::onClickFriend}"
 
-android:onClick="@{() -> click.onSaveClick(task)}"
+        android:onClick="@{() -> click.onSaveClick(task)}"
 
-android:onClick="@{(theView) -> click.onSaveClick(theView, task)}"
+        android:onClick="@{(theView) -> click.onSaveClick(theView, task)}"
 
-android:onLongClick="@{(theView) -> click.onLongClick(theView, task)}"
+        android:onLongClick="@{(theView) -> click.onLongClick(theView, task)}"
 
-//控件隐藏不设置点击，显示才设置点击
-android:onClick="@{(v) -> v.isVisible() ? doSomething() : void}"
+        //控件隐藏不设置点击，显示才设置点击
+        android:onClick="@{(v) -> v.isVisible() ? doSomething() : void}"
 ```
 
 双向绑定：@= 与 @ 的区别
 
 ```xml
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@={click.etLiveData}" />
 
-    <Textview
+<EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{click.etLiveData}" />  
+        android:text="@={click.etLiveData}"/>
+
+<Textview
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="@{click.etLiveData}"/>  
 ```
 
 使用单向绑定的时候@{}，viewModel中的数据变化了，就会影响到TextView的显示。而双向绑定则是当EditText内部的文本发生变化了也同样会影响到viewModel中的数据变化。
@@ -419,11 +438,12 @@ class UserAdapter(users: MutableList<User>, context: Context) :
 比如我定义一个自定义View,在内部使用了自定义的属性，需要在 xml 中赋值，
 
 ```xml
+
 <com.guadou.kt_demo.demo.demo12_databinding_texing.CustomTestView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    binding:clickProxy="@{click}"
-    binding:testBean="@{testBean}" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        binding:clickProxy="@{click}"
+        binding:testBean="@{testBean}"/>
 ```
 
 我们再自定义View的类中就可以通过 setXX 拿到这个赋值的属性了。
@@ -487,29 +507,29 @@ include 和 viewStub 的用法差不多，这里以 include 为例：
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:binding="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="RtlHardcoded">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:binding="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="RtlHardcoded">
 
     <data>
         <variable
-            name="testBean"
-            type="com.xx.xx.demo.TestBindingBean" /> 
+                name="testBean"
+                type="com.xx.xx.demo.TestBindingBean"/>
     </data>
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:viewBindingIgnore="true">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:viewBindingIgnore="true">
 
-      ...
+        ...
 
-         <include
-            layout="@layout/include_databinding_test"
-            binding:click="@{click}"
-            binding:testBean="@{testBean}" />
+        <include
+                layout="@layout/include_databinding_test"
+                binding:click="@{click}"
+                binding:testBean="@{testBean}"/>
 
     </FrameLayout>
 
@@ -523,47 +543,47 @@ include\_databinding\_test:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:binding="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:binding="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="testBean"
-            type="com.guadou.kt_demo.demo.demo12_databinding_texing.TestBindingBean" />
+                name="testBean"
+                type="com.guadou.kt_demo.demo.demo12_databinding_texing.TestBindingBean"/>
 
         <import
-            alias="textUtlis"
-            type="android.text.TextUtils" />
+                alias="textUtlis"
+                type="android.text.TextUtils"/>
     </data>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_marginTop="15dp"
-            android:text="下面是赋值的数据"
-            binding:clicks="@{click.testToast}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{testBean.text1}" />
+            android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{testBean.text2}" />
+                android:layout_marginTop="15dp"
+                android:text="下面是赋值的数据"
+                binding:clicks="@{click.testToast}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{testBean.text3}" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{testBean.text1}"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{testBean.text2}"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{testBean.text3}"/>
 
     </LinearLayout>
 
@@ -608,7 +628,8 @@ public class BindingAdapter {
 }
 ```
 
-方法名不是关键，关键的是注解上面的值 "url"，才是在xml中显示的自定义属性，而方法中的参数，第一个是限定在哪一个控件上生效的，是固定的比传的参数，而第二个参数 String url 才是我们自定义传入的参数。
+方法名不是关键，关键的是注解上面的值 "url"，才是在xml中显示的自定义属性，而方法中的参数，第一个是限定在哪一个控件上生效的，是固定的比传的参数，而第二个参数
+String url 才是我们自定义传入的参数。
 
 这个例子很简单，就是传入url，在 ImageView 上通过 Glide 显示图片。
 
@@ -653,28 +674,31 @@ fun ImageView.setImageUrl(url: String?) {
 使用：
 
 ```xml
-    <ImageView
+
+<ImageView
         android:id="@+id/img_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         binding:imgUrl="@{user.url}"
         binding:placeholder="@{@drawable/ic_launcher_background}"
-    />
+/>
 ```
 
-这里 `requireAll = false` 表示我们可以使用这两个两个属性中的任一个或同时使用，如果 `requireAll = true` 则两个属性必须同时使用，不然会在编译器报错，现在也 AS 会明确的指出错误地方方便修改的。
+这里 `requireAll = false` 表示我们可以使用这两个两个属性中的任一个或同时使用，如果 `requireAll = true`
+则两个属性必须同时使用，不然会在编译器报错，现在也 AS 会明确的指出错误地方方便修改的。
 
 #### 3.5 自定义转换器
 
 Converters 转换器其实是用的比较少，但是在一些特别的场景有奇效，特别是做一些多主题，国际化的时候。
 
 ```xml
+
 <Button
-    android:onClick="toggleIsError"
-    android:text="@{isError ? @color/red : @color/white}"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+        android:onClick="toggleIsError"
+        android:text="@{isError ? @color/red : @color/white}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 ```
 
 这样就可以根据颜色来显示不同的文本：
@@ -694,15 +718,17 @@ public static int convertColorToString(int color) {
 
 #### 3.6 DataBinding中字符串的各种特殊处理
 
-如果说 DataBinding 用的最多的控件，那必然是 TextView ，而文本的显示有多样的方式，国际化、占位符、Html/Span等多样的文本如何在 DataBinding 的 xml 中展示又是一个新的问题。
+如果说 DataBinding 用的最多的控件，那必然是 TextView ，而文本的显示有多样的方式，国际化、占位符、Html/Span等多样的文本如何在
+DataBinding 的 xml 中展示又是一个新的问题。
 
 经过前面的基本使用和部分高级的使用，这里就直接放代码了。
 
 **1. databinding使用string format 占位符：**
 
 ```xml
+
 <string name="Generic_Text">My Name is %s</string>
-android:text= "@{@string/Generic_Text(Profile.name)}"
+        android:text= "@{@string/Generic_Text(Profile.name)}"
 ```
 
 当然也可以直接使用字符串的，但是外面的一层要用`单引号`
@@ -719,8 +745,8 @@ android:text= "@{@string/Generic_Text(Profile.name)}"
 <data>
     <import type="android.text.Html"/>
 </data>
-...
- android:text="@{Html.fromHtml(@string/sxx_user_rank(user.readTimes))}"
+        ...
+        android:text="@{Html.fromHtml(@string/sxx_user_rank(user.readTimes))}"
 ```
 
 **3.Html中使用三元表达式**
@@ -749,15 +775,15 @@ android:text="@{viewModel.mYYPayLiveData.reward_points,default=@string/normal_em
 
 ```xml
 android:text="@{viewModel.mYYPayLiveData.reward_points}"
-tools:text="@string/normal_empty"
+        tools:text="@string/normal_empty"
 ```
 
 类似hilt的实现:
 
 ```xml
 binding:text="@{viewModel.mSelectBankName}"
-binding:default="@{@string/normal_empty}"
-tools:text="@string/normal_empty"
+        binding:default="@{@string/normal_empty}"
+        tools:text="@string/normal_empty"
 ```
 
 使用自定义属性完成：
@@ -793,7 +819,8 @@ DataBinding 通过布局中的 Tag 将控件查找出来，然后根据生成的
 
 可能有同学看了基本的使用和一些进阶的使用之后，更坚定了心中的想法，可去你的吧，使用这么麻烦，狗都不用...😅😅
 
-别急，我们还能对一些固定的场景化的用法做一些封装嘛，反正常用的几种方法，有限并不包括于一些字符串处理，图片处理，数据适配器的处理，UI的处理等一些方法定义好了或者封装好了使用起来就是so easy！
+别急，我们还能对一些固定的场景化的用法做一些封装嘛，反正常用的几种方法，有限并不包括于一些字符串处理，图片处理，数据适配器的处理，UI的处理等一些方法定义好了或者封装好了使用起来就是so
+easy！
 
 #### 5.1 Activity/Fragment主页面封装
 
@@ -1001,7 +1028,8 @@ class HomeArticleAdapter(layoutResId: Int = R.layout.item_article_constraint) :
 甚至在一些简单的布局展示逻辑，我们都无需继承基类实现，直接：
 
 ```xml
- private val systemAdapter by lazy { BaseBindAdapter<SystemParent>(R.layout.item_system, BR.systemParent) }
+ private val systemAdapter by lazy { BaseBindAdapter
+<SystemParent>(R.layout.item_system, BR.systemParent) }
 ```
 
 #### 5.3 常用的自定义属性与事件效果
@@ -1242,7 +1270,8 @@ fun layoutHeightAnim(view: View, targetHeight: Float) {
 
 **使用DataBinding的一些小Tips：**
 
-1.想用双向绑定就用，不想用双向绑定就用单向绑定，都不想用只用findviewbyid也是可以的。完全看大家的喜欢，当然不用DataBinding/ViewBinding 也行的，可以用其他的框架或者原生的findviewbyid都行的。
+1.想用双向绑定就用，不想用双向绑定就用单向绑定，都不想用只用findviewbyid也是可以的。完全看大家的喜欢，当然不用DataBinding/ViewBinding
+也行的，可以用其他的框架或者原生的findviewbyid都行的。
 
 2.如果要启动 DataBinding ，推荐你顺便加上 ViewBinding
 
@@ -1253,21 +1282,26 @@ buildFeatures {
 }
 ```
 
-DataBinding是 ViewBinding 的超集，如果只想替换findviewbyid的功能，那你可以使用使用 ViewBinding ，如果想强制指定不生成 ViewBinding 编译文件，可以加上`tools:viewBindingIgnore="true"` 。
+DataBinding是 ViewBinding 的超集，如果只想替换findviewbyid的功能，那你可以使用使用 ViewBinding ，如果想强制指定不生成
+ViewBinding 编译文件，可以加上`tools:viewBindingIgnore="true"` 。
 
 3.DataBinding虽然支持可以在xml里面写复杂的计算逻辑，但还是推荐大家尽量只做数据的绑定，逻辑计算尽量不要卸载xml里面，如果真要写逻辑，最多只做三元的逻辑判断。以免出现一些性能问题与调试问题。
 
-4.DataBinding配合ViewModel和LiveData食用更舒适，可以绑定生命周期也推荐大家要绑定到lifecycleOwner，它可以自动销毁资源，在此场景中 Flow 反而没有 LiveData 好用，并且在部分版本中 LiveData 反而兼容性更好。
+4.DataBinding配合ViewModel和LiveData食用更舒适，可以绑定生命周期也推荐大家要绑定到lifecycleOwner，它可以自动销毁资源，在此场景中
+Flow 反而没有 LiveData 好用，并且在部分版本中 LiveData 反而兼容性更好。
 
 5.xml 的标签尽量把自定义属性的 `app` 标签与 DataBinding 标签 `databinding` 区分开来便于后期的维护和同事的协同开发。
 
 6.善用 BindingAdapter 进行数据绑定与设置监听。
 
-总的来说用还是不用 DataBinding 还真是存乎一心，都行，只是我个人觉得在当下这个时间点看的话是利大于弊。再往后我也不好说，毕竟 Compose 把整个 xml 体系都给革命了。
+总的来说用还是不用 DataBinding 还真是存乎一心，都行，只是我个人觉得在当下这个时间点看的话是利大于弊。再往后我也不好说，毕竟
+Compose 把整个 xml 体系都给革命了。
 
 **说到这里请容许我挣扎一下先给自己叠个甲：**
 
-我认为原生 Android 的未来一定是 `Compose` ，但是多少年之后能走向主流不好说，3年？5年？毕竟 Kotlin 语言推出到今年这么多年了也只和 Java 55开而已，甚至我认识的好多5年以上的开发者都没用过 Kotlin，反而目前主流的 MVVM 中还是很多是使用 DataBinding 的，就算我们不用也是需要了解的。
+我认为原生 Android 的未来一定是 `Compose` ，但是多少年之后能走向主流不好说，3年？5年？毕竟 Kotlin 语言推出到今年这么多年了也只和
+Java 55开而已，甚至我认识的好多5年以上的开发者都没用过 Kotlin，反而目前主流的 MVVM 中还是很多是使用 DataBinding
+的，就算我们不用也是需要了解的。
 
 可能真的有很多人对 DataBinding 不喜欢、不感冒，也能理解。其实我也是各种机缘巧合下才入的坑，我也是从开始的嫌弃，到真香，再放弃，最后一直使用至今。
 
@@ -1277,8 +1311,11 @@ DataBinding是 ViewBinding 的超集，如果只想替换findviewbyid的功能�
 
 如果感觉本文对你有一点点的帮助，还望你能`点赞`支持一下,你的支持是我最大的动力。
 
-本文的部分代码可以在我的 Kotlin 测试项目中看到，[【传送门】](https://link.juejin.cn/?target=https%3A%2F%2Fgitee.com%2Fnewki123456%2FKotlin-Room "https://gitee.com/newki123456/Kotlin-Room")。你也可以关注我的这个Kotlin项目，我有时间都会持续更新。
+本文的部分代码可以在我的 Kotlin
+测试项目中看到，[【传送门】](https://link.juejin.cn/?target=https%3A%2F%2Fgitee.com%2Fnewki123456%2FKotlin-Room "https://gitee.com/newki123456/Kotlin-Room")
+。你也可以关注我的这个Kotlin项目，我有时间都会持续更新。
 
-关于 MVVM 架构 和 DataBinding 框架与其他 Jetpack 的实战项目，如果大家有兴趣可以看看大佬的项目 [难得一见 Jetpack MVVM 最佳实践](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FKunMinX%2FJetpack-MVVM-Best-Practice "https://github.com/KunMinX/Jetpack-MVVM-Best-Practice") 。
+关于 MVVM 架构 和 DataBinding 框架与其他 Jetpack
+的实战项目，如果大家有兴趣可以看看大佬的项目 [难得一见 Jetpack MVVM 最佳实践](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FKunMinX%2FJetpack-MVVM-Best-Practice "https://github.com/KunMinX/Jetpack-MVVM-Best-Practice") 。
 
 Ok,这一期就此完结。

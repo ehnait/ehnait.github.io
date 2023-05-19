@@ -1,8 +1,10 @@
 ﻿---
 title: 'IntelliJ 全家桶和付费插件 最新破解'
 classes: wide
-categories: JetBrains
-tags: JetBrains
+categories:
+  - 工具与平台
+tags:
+  - JetBrains
 ---
 
 # [idea_activate](https://github.com/LemonIT66/idea_activate)

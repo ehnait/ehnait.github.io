@@ -3,7 +3,7 @@ title: '最完善的 iOS 翻墙规则'
 excerpt: ""
 toc: true
 categories: 
-  - VPN
+  - 工具与平台
 tags:
   - Shadowrocket
 ---

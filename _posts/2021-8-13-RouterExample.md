@@ -1,12 +1,11 @@
 ﻿---
 title: 'Android手撸一个简易路由Router'
 excerpt: ""
-classes: wide 
 toc: true
-categories: 
-  - Android
+categories:
+  - 移动端
 tags:
-  - Router
+  - Android
 ---
 
 ## 核心原理
