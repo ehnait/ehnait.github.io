@@ -1,7 +1,6 @@
 ---
 title: 'Android 资源'
 excerpt: ""
-toc: false
 ---
 
 - [Android 资源大汇总](https://github.com/getActivity/AndroidIndex)
