@@ -10,6 +10,8 @@
 ![Screenshot](/Screenshot%202022-11-08%20at%2015-16-35%20Ehnait%E2%80%98s%20Website.png )
 
 
+---
+
 <h3 align="left">Languages and Tools I frequently use are:</h3>
 <p align="left"><a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg"
