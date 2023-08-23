@@ -8,9 +8,7 @@ tags:
   - Python
 ---
 
-[GitHub直达](https://github.com/ehnait/contactPutianHospital)
-
-# contactPutianHospital
+# [contactPutianHospital GitHub直达](https://github.com/ehnait/contactPutianHospital)
 
 <div align="center">
     <a href="https://github.com/ehnait/contactPutianHospital/releases" target="_blank">
