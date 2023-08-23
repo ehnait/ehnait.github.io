@@ -12,17 +12,21 @@ tags:
 
 # contactPutianHospital
 
+<div align="center">
+    <a href="https://github.com/ehnait/contactPutianHospital/releases" target="_blank">
+        <img alt="GitHub release (with filter)"
+             src="https://img.shields.io/github/v/release/ehnait/contactPutianHospital"></a>
+    <a href="https://github.com/ehnait/contactPutianHospital/issues" target="_blank">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/ehnait/contactPutianHospital"></a>
+    <a href="https://shields.io/" target="_blank">
+        <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/ehnait/contactPutianHospital"></a>
+</div>
+
 ## 说明
 
-此项目借鉴[callPhoneBoom](https://github.com/olyble/callPhoneBoom)
-，使用[DrissionPage](http://g1879.gitee.io/drissionpagedocs/)简化了操作流程并对边界情况进行了处理。
-
-## 初衷
-
-在生活中总会遇见很多坏蛋，他们心理BT，他们不惧怕法律 ，他们游走在法律的边缘，他们势力庞大。 像我一样的守法好公民对这些坏蛋毫无办法。
-最终我只好选择**以德报怨**。我推测这些坏蛋们一定是是因为一些隐疾而导致心理BT的，所以我主动帮他们联系**莆田系医院**
-，帮他们咨询。此举深藏功与名。
-每联系一个医院都会**功德+1**
+- 此项目借鉴[callPhoneBoom](https://github.com/olyble/callPhoneBoom)
+  ，使用[DrissionPage](http://g1879.gitee.io/drissionpagedocs/)简化浏览器操作流程并对边界情况进行了处理。
+- 重写catch.py脚本，获取api更丝滑了，[api列表更新](api.txt)
 
 ## 思路
 
@@ -30,9 +34,11 @@ tags:
 
 ## Feature
 
-1. 通过程序模拟浏览莆田系医院网址，自动发送目标手机号给企业 **main.py**。
-2. 可设置定时任务 **scheduler.py**
-3. 内置爬取莆田系医院网址的脚本  **catch.py**
+主动帮助坏蛋蛋联系 **莆田系医院** 并留下电话号码。此举深藏功与名，每联系一次都会使你 **功德+1**
+
+1. **main.py**：通过程序模拟浏览莆田系医院网址，自动发送目标手机号给企业 。
+2. **scheduler.py**:设置定时任务
+3. **catch.py**:批量爬取莆田系医院网址
 
 ## 使用教程
 
@@ -43,8 +49,7 @@ tags:
    ```
    pip install -r requirements.txt
    ```
-5. 修改并运行一下 **config.py** 确保配置正确
-6. 运行 **main.py**
+5. 查看 **main.py**的注释， 确保配置正确 ，运行 **main.py**
 
 ## 免责声明
 
@@ -52,5 +57,7 @@ tags:
 2. 本程序仅供娱乐,源码全部开源,**禁止滥用** 和二次 **贩卖盈利**.  **禁止用于商业用途**.
 
 ## 运行截图
+
+![](imgs/img1.png)
 
 ![20230808_1](/assets/images/20230808_1.png)
