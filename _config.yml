@@ -10,9 +10,9 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-#theme                    : "minimal-mistakes-jekyll"
+#theme: "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" #"air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dark" #"default","air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US" # "zh-CN"
@@ -278,10 +278,13 @@ compress_html:
 
 # Collections
 collections:
-  links:
+  notes:
     output: true
     permalink: /:collection/:path/
-  sorting:
+  homebrew:
+    output: true
+    permalink: /:collection/:path/
+  algorithm:
     output: true
     permalink: /:collection/:path/
 
@@ -302,19 +305,13 @@ defaults:
       share: false
       related: true
 
-  # _links
+  # notes
   - scope:
       path: ""
-      type: links
+      type: notes
     values:
       layout: single
       author_profile: true
 
-  # _sorting
-  - scope:
-      path: ""
-      type: sorting
-    values:
-      layout: single
-      classes: wide
-      author_profile: true
+after_footer_scripts:
+  - assets/js/clipboard.js
