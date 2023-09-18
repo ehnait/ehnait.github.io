@@ -1,8 +1,10 @@
 ---
-title: "About"
+title: " "
+layout: splash
 permalink: /about/
-excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
-# last_modified_at: 2022-05-27T11:59:26-04:00
+hidden: true
+header:
+  image: /assets/images/header-image-6.jpg
+  caption: "Photo credit: [**Wallhere**](https://wallhere.com/)"
 ---
-
-
+啥也没写

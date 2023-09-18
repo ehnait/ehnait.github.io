@@ -32,7 +32,7 @@ feature_row:
     btn_class: "btn--light-outline"
     btn_label: "Learn more"
     
-  - image_path: /assets/images/articles-image-4.jpg
+  - image_path: /assets/images/articles-image-3.jpg
     alt: "算法"
     title: "算法"
     excerpt: "算法犹如美妙的交响乐，每一行代码都像韵律般流淌。"
