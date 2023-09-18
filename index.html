@@ -1,4 +1,39 @@
 ---
-layout: home
-author_profile: true
+title: "Hi, everybody ——"
+layout: splash
+author_profile: false
+
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.2"
+  overlay_image: /assets/images/header-image-1.jpg
+
+  actions:
+    - label: "About me →"
+      url: "/about/"
+  caption: "Photo credit: [**Wallhere**](https://wallhere.com/)"
+
+excerpt:
+  这是我的个人小站。 <br />
+  我将会持续以<a href="/articles/">Articles</a>、<a href="/notes/">Notes</a>、<a href="/posts/">Posts</a>的形式发布合适的网络内容，有时我也会在<a href="/others/">Others</a>分享生活记录。<br />
+  <small>—— 其实更多的，我只是把它当做备忘录。hhh~ </small>
 ---
+<!--<br/><br/>-->
+
+<a class="github-button" href="https://github.com/ehnait/ehnait.github.io" data-icon="octicon-star" data-size="large"
+   data-show-count="true" aria-label="Star ehnait/ehnait.github.io on GitHub">Star</a>
+<a class="github-button" href="https://github.com/ehnait/ehnait.github.io/fork" data-icon="octicon-repo-forked"
+   data-size="large" data-show-count="true" aria-label="Fork ehnait/ehnait.github.io on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/ehnait/ehnait.github.io/archive/HEAD.zip" data-icon="octicon-download"
+   data-size="large" aria-label="Download ehnait/ehnait.github.io on GitHub">Download</a>
+
+
+<h1>Latest News</h1>
+<div class="grid__wrapper">
+  {% for post in site.posts limit:4 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="/assets/js/github-buttons.js"></script>

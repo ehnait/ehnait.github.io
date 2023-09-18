@@ -4,10 +4,10 @@ layout: splash
 permalink: /articles/
 hidden: true
 header:
-  #image: /assets/images/wallhere-image-1.jpg
+  #image: /assets/images/header-image-2.jpg
   #overlay_color: "#000"
   #overlay_filter: "0.3"
-  overlay_image: /assets/images/wallhere-image-1.jpg
+  overlay_image: /assets/images/header-image-2.jpg
   caption: "Photo credit: [**Wallhere**](https://wallhere.com/)"
 
 excerpt:

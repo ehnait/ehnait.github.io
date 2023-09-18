@@ -6,6 +6,8 @@ main:
     url: /notes/
   - title: "Posts"
     url: /posts/
+  - title: "Others"
+    url: /others/
   - title: "About"
     url: /about/
   # - title: "External Link"
