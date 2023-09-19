@@ -12,7 +12,11 @@
 
 #theme: "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark" #"default","air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "default"
+minimal_mistakes_skin_dark: "dark"
+
+logo: "/assets/images/logo.png"
+logo_dark: "/assets/images/logo.png"
 
 # Site Settings
 locale                   : "en-US" # "zh-CN"
@@ -24,7 +28,6 @@ url                      : "https://ehnait.github.io" # the base hostname & prot
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               :  "ehnait/ehnait.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : #"/assets/images/500x300.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : /assets/images/logo.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "HOME" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
