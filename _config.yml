@@ -109,7 +109,11 @@ analytics:
 author:
   name             : "Tianhe"
   avatar           : "/assets/images/bio-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "just a Coder."
+  bio              : "🙂 三大爱好：赖酒、白嫖、顺火机<br /><br />
+                      🏄 互联网冲浪金牌选手 <br /><br />
+                      🥁 国家一级退堂鼓表演艺术家 <br /><br />
+                      🏆 曾获得全国散打锦标赛六年级对一年级冠军 <br /><br />
+                      ⚽️ 15岁参加全国幼儿园足球比赛1过11震惊全世界 <br /><br />"
   location         : "China"
   email            :
   links:
