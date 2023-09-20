@@ -3,9 +3,9 @@ title: '这一次，让Kotlin Flow 操作符真正好用起来'
 excerpt: ''
 classes: wide
 categories:
-  - 移动端
+  - 编程语言
 tags:
-  - Android
+  - Kotlin
 ---
 
 # 前言

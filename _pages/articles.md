@@ -21,7 +21,7 @@ feature_row:
     title: "Homebrew"
     excerpt: "🍺 The missing package manager for macOS (or Linux)."
     url: "/homebrew/"
-    btn_class: "btn--light-outline"
+    btn_class: "btn--primary"
     btn_label: "Learn more"
 
   - image_path: /assets/images/articles-image-2.jpg
@@ -29,7 +29,7 @@ feature_row:
     title: "青龙面板"
     excerpt: "支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台."
     url: "/qinglong/"
-    btn_class: "btn--light-outline"
+    btn_class: "btn--primary"
     btn_label: "Learn more"
     
   - image_path: /assets/images/articles-image-3.jpg
@@ -37,7 +37,7 @@ feature_row:
     title: "算法"
     excerpt: "算法犹如美妙的交响乐，每一行代码都像韵律般流淌。"
     url: "/algorithm/"
-    btn_class: "btn--light-outline"
+    btn_class: "btn--primary"
     btn_label: "Learn more"
 ---
 

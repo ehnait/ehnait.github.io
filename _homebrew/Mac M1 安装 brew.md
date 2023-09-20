@@ -1,12 +1,9 @@
-﻿---
-title: 'Mac M1 安装 brew'
-excerpt: ""
-classes: wide
-categories:
-  - 工具与平台
-tags:
-  - Homebrew
 ---
+title: 'Mac M1 安装 brew'
+layout: single
+excerpt: ""
+---
+
 ### 安装
 
 [官网](https://brew.sh/)

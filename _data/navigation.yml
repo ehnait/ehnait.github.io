@@ -2,12 +2,10 @@
 main:
   - title: "Articles"
     url: /articles/
-  - title: "Notes"
-    url: /notes/
   - title: "Posts"
     url: /posts/
-  - title: "Life"
-    url: /life/
+  - title: "Notes"
+    url: /notes/
   - title: "About"
     url: /about/
   # - title: "External Link"

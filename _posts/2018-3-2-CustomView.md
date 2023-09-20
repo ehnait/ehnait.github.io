@@ -1,13 +1,16 @@
 ---
 title: 'Android水位动画'
 excerpt: "Android自定义View实现水位波浪的动画效果"
-categories: 
+classes: wide
+header:
+  teaser: /assets/images/20180302_1.gif
+categories:
   - 移动端
 tags:
   - Android
 ---
 
-![gif](/assets/images/20180302_1.gif){: .align-center height="40%" width="40%"}
+## 代码实现
 
 ```java
 
@@ -417,3 +420,8 @@ public class LoadView extends View {
 }
 
 ```
+
+## 预览
+
+![gif](/assets/images/20180302_1.gif){: .align-center height="40%" width="40%"}
+

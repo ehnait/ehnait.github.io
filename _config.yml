@@ -19,7 +19,7 @@ logo: "/assets/images/logo.png"
 logo_dark: "/assets/images/logo.png"
 
 # Site Settings
-locale                   : "en-US" # "zh-CN"
+locale                   : "zh-CN" # "en-US"
 title                    : "Ehnait‘s Website"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : &name "Ehnait"
@@ -294,6 +294,9 @@ collections:
   algorithm:
     output: true
     permalink: /:collection/:path/
+  qinglong:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -304,7 +307,8 @@ defaults:
       type: posts
     values:
       layout: single
-      classes: wide #landing
+      classes: landing #wide
+      toc_sticky: true
       author_profile: true
       read_time: true
       show_date: true
@@ -319,6 +323,16 @@ defaults:
     values:
       layout: single
       author_profile: true
+      toc_sticky: true
+
+  # homebrew
+  - scope:
+      path: ""
+      type: homebrew
+    values:
+      layout: single
+      author_profile: true
+      toc_sticky: true
 
 after_footer_scripts:
   - assets/js/clipboard.js

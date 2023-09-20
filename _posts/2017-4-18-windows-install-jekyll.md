@@ -2,6 +2,8 @@
 title: 'windows环境下搭建Jekyll'
 excerpt: ""
 toc: true
+header:
+  teaser: /assets/images/20180207_1.png
 categories:
   - 工具与平台
 tags:
