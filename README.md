@@ -5,7 +5,7 @@
 
 <h3 align="center"> 📝 I regularly write articles on <a href="https://ehnait.github.io/" target="_blank">https://ehnait.github.io/</a></h3>
 
-![Screenshot](/Screenshot%202022-11-08%20at%2015-16-35%20Ehnait%E2%80%98s%20Website.png )
+![Screenshot](/Screenshot 2023-09-20 17.56.14.png )
 
 
 ---
