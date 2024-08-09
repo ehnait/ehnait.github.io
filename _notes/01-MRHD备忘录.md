@@ -1,5 +1,5 @@
 ---
-title: '墨然备忘录'
+title: '备忘录'
 header:
   teaser: /assets/images/teaser-image-2.jpg
 toc: true
