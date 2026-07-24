@@ -1,0 +1,4 @@
+# Local-only overrides. Do not use on GitHub Pages.
+# bundle exec jekyll serve --config _config.yml,_config.local.yml
+theme: "minimal-mistakes-jekyll"
+remote_theme: null

@@ -10,8 +10,10 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-theme                    : "minimal-mistakes-jekyll" # local gem preview
-remote_theme             : "mmistakes/minimal-mistakes@4.28.0" # GitHub Pages
+# GitHub Pages 不支持 theme gem，只能用 remote_theme。
+# 本地预览：bundle exec jekyll serve --config _config.yml,_config.local.yml
+#theme                    : "minimal-mistakes-jekyll"
+remote_theme             : "mmistakes/minimal-mistakes@4.28.0"
 minimal_mistakes_skin: "default"
 minimal_mistakes_skin_dark: "dark"
 
@@ -237,6 +239,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -245,6 +248,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 
 # Archives
